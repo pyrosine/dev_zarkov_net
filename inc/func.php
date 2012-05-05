@@ -12,7 +12,7 @@ class element{
 		echo("<div class='form'><form method='post' action='$r_action'>");
 		echo("<input type='hidden' name='user' value='$did'>");
 		if($o_title==1) echo("Title: <input type='text' name='title' size=32><br />");
-		echo("<textarea style='width: 100%; height: 40px;'></textarea>");
+		echo("<textarea style='width: 100%; height: 40px;' name='textarea'></textarea>");
 		echo("<input type='button' value='Post'>");
 		echo("</form></div>");
 	}
@@ -25,7 +25,7 @@ class element{
 				return true;
 			}
 		</script>");
-		echo("<div class='form'><form method='post' action='scripts/login.php' id='login' onsubmit='return validate();'>");
+		echo("<div class='form'><form method='post' action='sc.login.php' id='login' onsubmit='return validate();'>");
 		echo("User: <input type='text' name='user'><br/>");
 		echo("Password: <input type='password' name='pass'><br />");
 		echo("<input type='button' value='Login'>");
