@@ -1,8 +1,8 @@
 <?php
 include("../inc/track.php");
 
-$uid=$_COOKIE["userid"];
-$token=$_COOKIE["token"];
+$uid=$_COOKIE["dev_id"];
+$token=$_COOKIE["dev_token"];
 
 if($uid==null || $token==null) {$e="nocookies"; include("inc.login.php");}
 
