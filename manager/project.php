@@ -8,9 +8,9 @@ $pid=$_GET["pid"];
 $pq=mysql_query("select * from projects where id=".mysql_real_escape_string($pid)."");
 if(mysql_num_rows($pq)==0){ echo("Project ID $pid does not exist."); exit();}
 
-$p_dq=mysql_query("select * from project_devs where did=$did");
-if(mysql_num_rows($p_dq)==0 && mysql_result($pq,0,"private")==1){ echo("Project ID $pid is private and you are not a registered developer on the project."); exit();}
-elseif(mysql_num_rows($p_dq)==1) $is_dev=1;
+$p_mq=mysql_query("select * from project_managers where mid=$mid");
+if(mysql_num_rows($p_mq)==0 && mysql_result($pq,0,"private")==1){ echo("Project ID $pid is both private and not a project managed by you."); exit();}
+elseif(mysql_num_rows($p_mq)==1) $is_manager=1;
 
 
 $mq=mysql_query("select * from project_managers where pid=".mysql_real_escape_string($pid));
@@ -43,9 +43,9 @@ for($z=0;$z<mysql_num_rows($uq);$z++){
 	echo("<pre>".mysql_result($uq,$z,description)."</pre>");
 	echo("</div>");
 }
-if($is_dev) {
+if($is_manager) {
 	$t = new element();
-	$t->textbox("scripts/update.php",1);
+	$t->textbox("scripts/status_request.php",1);
 }
 
 echo("</div>");
