@@ -53,7 +53,7 @@ class element{
 				return true;
 			}
 		</script>");
-		echo("<div class='form'><form method='post' action='scripts/register.php' onsubmit='return validate();' id='reg'>");
+		echo("<div class='form'><form method='post' action='sc.register.php' onsubmit='return validate();' id='reg'>");
 		echo("User: <input type='text' name='user'><p />");
 		echo("Email: <input type='text' name='email'><p />");
 		echo("Password: <input type='password' name='pass'><p />");
