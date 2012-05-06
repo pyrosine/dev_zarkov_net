@@ -19,7 +19,7 @@ create table page_tracking(
 create table devs(
 	id int(11) unique auto_increment primary key not null,
 	user varchar(64) unique not null,
-	password varchar(64) not null,
+	pass varchar(64) not null,
 	email varchar(128) unique not null,
 	reputation int(2) default 0
 );
@@ -46,6 +46,7 @@ create table dev_actions(
 create table managers(
 	id int(11) unique auto_increment primary key not null,
 	user varchar(64) unique not null,
+	pass varchar(64) not null,
 	email varchar(128) unique not null,
 	reputation int(3) default 0
 );
