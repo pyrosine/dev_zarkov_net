@@ -1,4 +1,5 @@
 <?php
+include_once("inc/track.php");
 include("inc/header.php");
 include("inc.menu.php");
 

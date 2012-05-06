@@ -1,4 +1,4 @@
-///////////////////////// Basic Tracking
+######################### Basic Tracking
 create table ips(
 	id int(11) unique not null auto_increment primary key,
 	ip varchar(15) not null
@@ -8,7 +8,7 @@ create table fingerprints(
 	useragent varchar(128) not null
 );
 	
-///////////////////////// Dev management
+######################### Dev management
 create table devs(
 	id int(11) unique auto_increment primary key not null,
 	user varchar(64) unique not null,
@@ -20,7 +20,7 @@ create table dev_sessions(
 	id int(11) unique auto_increment primary key not null,
 	did int(11) not null,
 	timestamp int(32) not null,
-	expiry int(32) not null default timestamp+604800
+	expiry int(32) not null,
 	iid int(11) not null,
 	fid int(11) not null,
 	token varchar(64) not null,
@@ -31,11 +31,11 @@ create table dev_actions(
 	did int(11) not null,
 	iid int(11) not null,
 	fid int(11) not null,
-	event varchar(128) not null, 							/// Syntax [profile,project].[id].[action]
+	event varchar(128) not null, 							### Syntax [profile,project].[id].[action]
 	timestamp int(32) not null
 );
 
-///////////////////////// Manager management
+######################### Manager management
 create table managers(
 	id int(11) unique auto_increment primary key not null,
 	user varchar(64) unique not null,
@@ -46,7 +46,7 @@ create table manager_sessions(
 	id int(11) unique auto_increment primary key not null,
 	mid int(11) not null,
 	timestamp int(32) not null,
-	expiry int(32) not null default timestamp+604800
+	expiry int(32) not null,
 	iid int(11) not null,
 	fid int(11) not null
 );
@@ -55,11 +55,11 @@ create table manager_actions(
 	did int(11) not null,
 	iid int(11) not null,
 	fid int(11) not null,
-	event varchar(128) not null, 							/// Syntax [profile,project].[id].[action]
+	event varchar(128) not null, 							### Syntax [profile,project].[id].[action]
 	timestamp int(32) not null
 );
 
-///////////////////////// Project management
+######################### Project management
 create table projects(
 	id int(11) unique auto_increment primary key not null,
 	title varchar(64) not null,
@@ -85,7 +85,7 @@ create table project_devs(
 	id int(11) unique auto_increment primary key not null,
 	pid int(11) not null,
 	did int(11) not null,
-	reward_share not null varchar(128)
+	reward_share varchar(128) not null
 );
 create table project_updates(
 	id int(11) not null unique auto_increment,
