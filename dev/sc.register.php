@@ -12,7 +12,7 @@ $eq=mysql_query("select * from devs where email='".mysql_real_escape_string($e).
 if(mysql_num_rows($eq)!=0) header("location:register.php?e=eexists");
 
 
-mysql_query("insert into devs (user,pass,email) values ('".mysql_real_escape_string($u)."','".mysql_real_escape_string($p)."','".mysql_real_escape_string($e)."')");
+mysql_query("insert into devs (user,pass,email) values ('".mysql_real_escape_string($u)."','".sha1($p."strawberries")."','".mysql_real_escape_string($e)."')");
 $did=mysql_insert_id();
 $expiry=time()+(3600*24);
 $token=sha1(time()."pyrosine");
