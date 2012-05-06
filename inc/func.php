@@ -36,10 +36,10 @@ class element{
 		echo("<script>
 			function validate(){
 				var F=document.getElementById('reg');
-				if(F.user.value.length<3){return false;}
-				if(F.pass.value.length<6){return false;}
-				if(F.email.value.indexOf('@')<1 || F.email.value.lastIndexOf('.')<email_atpos+2 || F.email.value.lastIndexOf('.')+2>=email.length){return false;}
-				if(F.pass.value!=F.r_pass.value){return false;}");/*
+				if(F.user.value.length<3){alert('Bad username');return false;}
+				if(F.pass.value.length<6){alert('Bad password');return false;}
+				if(F.email.value.indexOf('@')<1 || F.email.value.lastIndexOf('.')<email_atpos+2 || F.email.value.lastIndexOf('.')+2>=email.length){alert('Bad email');return false;}
+				if(F.pass.value!=F.r_pass.value){alert('Bad repeated password');return false;}");/*
 					xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange=function(){
 						if (xmlhttp.readyState==4 && xmlhttp.status==200) {
@@ -53,7 +53,7 @@ class element{
 				return true;
 			}
 		</script>");
-		echo("<div class='form'><form method='post' action='scripts/register.php' onsubmit='return validate()' id='reg'>");
+		echo("<div class='form'><form method='post' action='scripts/register.php' onsubmit='return validate();' id='reg'>");
 		echo("User: <input type='text' name='user'><br/>");
 		echo("Email: <input type='text' name='email'><br/>");
 		echo("Password: <input type='password' name='pass'><br />");
