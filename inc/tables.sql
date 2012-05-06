@@ -7,6 +7,13 @@ create table fingerprints(
 	id int(11) unique not null auto_increment primary key,
 	useragent varchar(128) not null
 );
+create table page_tracking(
+	id int(11) unique not null auto_increment primary key,
+	iid int(11) not null,
+	fid int(11) not null,
+	page varchar(128) not null,
+	timestamp int(32) not null
+);
 	
 ######################### Dev management
 create table devs(
