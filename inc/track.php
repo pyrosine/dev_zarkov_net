@@ -10,9 +10,9 @@ if(mysql_num_rows($iid_q)==0) {
 }
 else $iid=mysql_result($iid_q,0,id);
 
-$fid_q=mysql_query("select * from fingerprints where useragent='".mysql_real_escape_string($_SERVER[""])."'");
+$fid_q=mysql_query("select * from fingerprints where useragent='".mysql_real_escape_string($_SERVER["HTTP_USER_AGENT"])."'");
 if(mysql_num_rows($fid_q)==0) {
-	mysql_query("insert into fingerprints (useragent) values ('".mysql_real_escape_string($_SERVER[""])."')");
+	mysql_query("insert into fingerprints (useragent) values ('".mysql_real_escape_string($_SERVER["HTTP_USER_AGENT"])."')");
 	$fid=mysql_insert_id();
 }
 else $fid=mysql_result($fid_q,0,id);
