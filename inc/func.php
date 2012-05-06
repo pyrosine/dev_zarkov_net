@@ -30,6 +30,7 @@ class element{
 		echo("Password: <input type='password' name='pass'><br />");
 		echo("<input type='button' value='Login'>");
 		echo("</form></div>");
+		echo("<a href='register.php'>Haven't registered?</a> <a href='lost.password.php'>Forgot your password?</a>");
 	}
 	function register(){
 		echo("<script>
