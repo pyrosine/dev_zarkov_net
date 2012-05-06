@@ -38,7 +38,7 @@ class element{
 				if(F.user.value.length<3){return false;}
 				if(F.pass.value.length<6){return false;}
 				if(F.email.value.indexOf('@')<1 || F.email.value.lastIndexOf('.')<email_atpos+2 || F.email.value.lastIndexOf('.')+2>=email.length){return false;}
-				if(F.pass.value!=F.r_pass.value){return false;}
+				if(F.pass.value!=F.r_pass.value){return false;}");/*
 					xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange=function(){
 						if (xmlhttp.readyState==4 && xmlhttp.status==200) {
@@ -48,7 +48,7 @@ class element{
 					xmlhttp.open('POST','scripts/register_ucheck.php',true);
 					xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 					xmlhttp.send('username='+F.user.value);
-				if(user_taken==1){return false;}
+				if(user_taken==1){return false;}*/echo("
 				return true;
 			}
 		</script>");
