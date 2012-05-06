@@ -1,6 +1,5 @@
 <?php
 include("inc.user.php");
-echo("TESTING");
 include("../inc/header.php");
 include("inc.menu.php");
 

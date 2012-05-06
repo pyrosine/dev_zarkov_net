@@ -6,7 +6,7 @@ $u=$_POST["user"];
 $p=$_POST["pass"];
 
 $q=mysql_query("select * from devs where user='".mysql_real_escape_string($u)."' and pass='".sha1($p."strawberries")."'");
-if(mysql_num_rows($q)==0) header("location:inc.login.php?e=badlogin");
+if(mysql_num_rows($q)==0) header("location:login.php?e=badlogin");
 else {
 	$did=mysql_result($q,0,id);
 	if($stay_logged_in) $expiry=0;
