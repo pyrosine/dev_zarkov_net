@@ -11,7 +11,7 @@ class element{
 		</script>");
 		echo("<div class='form'><form method='post' action='$r_action'>");
 		echo("<input type='hidden' name='user' value='$did'>");
-		if($o_title==1) echo("Title: <input type='text' name='title' size=32><br />");
+		if($o_title==1) echo("Title: <input type='text' name='title' size=32><p />");
 		echo("<textarea style='width: 100%; height: 40px;' name='textarea'></textarea>");
 		echo("<input type='button' value='Post'>");
 		echo("</form></div>");
@@ -26,9 +26,9 @@ class element{
 			}
 		</script>");
 		echo("<div class='form'><form method='post' action='sc.login.php' id='login' onsubmit='return validate();'>");
-		echo("User: <input type='text' name='user'><br/>");
-		echo("Password: <input type='password' name='pass'><br />");
-		echo("<input type='button' value='Login'>");
+		echo("User: <input type='text' name='user'><p />");
+		echo("Password: <input type='password' name='pass'><p />");
+		echo("<input type='submit' value='Login'>");
 		echo("</form></div>");
 		echo("<a href='register.php'>Haven't registered?</a> <a href='lost.password.php'>Forgot your password?</a>");
 	}
@@ -54,11 +54,11 @@ class element{
 			}
 		</script>");
 		echo("<div class='form'><form method='post' action='scripts/register.php' onsubmit='return validate();' id='reg'>");
-		echo("User: <input type='text' name='user'><br/>");
-		echo("Email: <input type='text' name='email'><br/>");
-		echo("Password: <input type='password' name='pass'><br />");
-		echo("Repeat Password: <input type='password' name='r_pass'><br />");
-		echo("<input type='button' value='Register'>");
+		echo("User: <input type='text' name='user'><p />");
+		echo("Email: <input type='text' name='email'><p />");
+		echo("Password: <input type='password' name='pass'><p />");
+		echo("Repeat Password: <input type='password' name='r_pass'><p />");
+		echo("<input type='submit' value='Register'>");
 		echo("</form></div>");
 	}
 }
