@@ -14,8 +14,8 @@ else {
 	$token=sha1(time()."hawheehaw");
 	
 	mysql_query("insert into dev_sessions (did,iid,fid,timestamp,token,expiry) values ($did,$iid,$fid,".time().",'$token',$expiry)");
-	setcookie('dev_id','$did','$expiry','/','dev.zarkov.net');
-	setcookie('dev_token','$token','$expiry','/','dev.zarkov.net');
+	setcookie('dev_id','$did',$expiry,'/','dev.zarkov.net');
+	setcookie('dev_token','$token',$expiry,'/','dev.zarkov.net');
 	
 	header("location:".$_SERVER["REQUEST_URI"]);
 }
