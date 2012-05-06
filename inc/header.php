@@ -16,3 +16,4 @@
 </style>
 </head>
 <body>
+<?php include_once("func.php"); ?>

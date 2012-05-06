@@ -1,5 +1,16 @@
 <?php
+$m_item=0;
 class element{
+	function item($item,$url,$side){
+		global $m_item;
+		echo("<div style='display: inline; border:1px dotted; float:$side;'>");
+		echo("<a id=$m_item style='font-size: 30px;' ");
+		echo("onMouseOver='document.getElementById($m_item).style.color=".'"#F7F7F7"'."' ");
+		echo("onMouseOut='document.getElementById($m_item).style.color=".'"black"'."' ");
+		echo("href='$url'>$item</a>");
+		echo("</div>");
+		$m_item++;
+	}
 	function textbox($r_action,$o_title){
 		echo("<script>
 			function validate(){
