@@ -11,7 +11,7 @@ else {
 	$did=mysql_result($q,0,id);
 	if($stay_logged_in) $expiry=0;
 	else $expiry=time()+(3600*24);
-	$token=sha1(time()."hawheehaw");
+	$token=sha1(time()."pyrosine");
 	
 	mysql_query("insert into dev_sessions (did,iid,fid,timestamp,token,expiry) values ($did,$iid,$fid,".time().",'$token',$expiry)");
 	setcookie('dev_id',$did,$expiry,'/','dev.zarkov.net');

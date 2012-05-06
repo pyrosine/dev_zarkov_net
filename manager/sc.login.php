@@ -11,9 +11,9 @@ else {
 	$mid=mysql_result($q,0,id);
 	if($stay_logged_in) $expiry=0;
 	else $expiry=time()+(3600*24);
-	$token=sha1(time()."hawheehaw");
+	$token=sha1(time()."pyrosine");
 	
-	mysql_query("insert into manager_sessions (did,iid,fid,timestamp,token,expiry) values ($mid,$iid,$fid,".time().",'$token',$expiry)");
+	mysql_query("insert into manager_sessions (mid,iid,fid,timestamp,token,expiry) values ($mid,$iid,$fid,".time().",'$token',$expiry)");
 	setcookie('man_id',$mid,$expiry,'/','dev.zarkov.net');
 	setcookie('man_token',$token,$expiry,'/','dev.zarkov.net');
 	

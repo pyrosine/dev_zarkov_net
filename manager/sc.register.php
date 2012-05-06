@@ -14,7 +14,7 @@ if(mysql_num_rows($eq)!=0) header("location:register.php?e=eexists");
 mysql_query("insert into managers (user,pass,email) values ('".mysql_real_escape_string($u)."','".sha1($p."strawberries")."','".mysql_real_escape_string($e)."')");
 $mid=mysql_insert_id();
 $expiry=time()+(3600*24);
-$token=sha1(time()."hawheehaw");
+$token=sha1(time()."pyrosine");
 	
 mysql_query("insert into manager_sessions (mid,iid,fid,timestamp,token,expiry) values ($mid,$iid,$fid,".time().",'$token',$expiry)");
 setcookie('man_id',$mid,$expiry,'/','dev.zarkov.net');
