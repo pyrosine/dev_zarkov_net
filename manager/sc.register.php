@@ -17,8 +17,8 @@ $expiry=time()+(3600*24);
 $token=sha1(time()."hawheehaw");
 	
 mysql_query("insert into manager_sessions (mid,iid,fid,timestamp,token,expiry) values ($mid,$iid,$fid,".time().",'$token',$expiry)");
-setcookie('man_id','$mid',$expiry,'/','dev.zarkov.net');
-setcookie('man_token','$token',$expiry,'/','dev.zarkov.net');
+setcookie('man_id',$mid,$expiry,'/','dev.zarkov.net');
+setcookie('man_token',$token,$expiry,'/','dev.zarkov.net');
 
 header("location:index.php");
 
