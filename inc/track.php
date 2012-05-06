@@ -17,4 +17,4 @@ if(mysql_num_rows($fid_q)==0) {
 }
 else $fid=mysql_result($fid_q,0,id);
 
-mysql_query("insert into page_tracking (iid,fid,page,timestamp) values ($iid,$fid,'".str_replace($_SERVER["DOCUMENT_ROOT"],"",getcwd()).$_SERVER["SCRIPT_FILENAME"]."',".time().")");
+mysql_query("insert into page_tracking (iid,fid,page,timestamp) values ($iid,$fid,'".str_replace($_SERVER["DOCUMENT_ROOT"],"",$_SERVER["SCRIPT_FILENAME"])."',".time().")");
