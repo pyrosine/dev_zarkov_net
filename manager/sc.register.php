@@ -20,6 +20,6 @@ mysql_query("insert into manager_sessions (mid,iid,fid,timestamp,token,expiry) v
 setcookie('man_id','$mid',$expiry,'/','dev.zarkov.net');
 setcookie('man_token','$token',$expiry,'/','dev.zarkov.net');
 
-header("index.php");
+header("location:index.php");
 
 ?>

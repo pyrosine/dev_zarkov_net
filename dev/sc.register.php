@@ -21,6 +21,6 @@ mysql_query("insert into dev_sessions (did,iid,fid,timestamp,token,expiry) value
 setcookie('dev_id',$did,$expiry,'/','dev.zarkov.net');
 setcookie('dev_token',$token,$expiry,'/','dev.zarkov.net');
 
-header("index.php");
+header("location:index.php");
 
 ?>
