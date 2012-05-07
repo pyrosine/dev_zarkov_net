@@ -17,5 +17,7 @@ else {
 	setcookie('dev_id',$did,$expiry,'/','dev.zarkov.net');
 	setcookie('dev_token',$token,$expiry,'/','dev.zarkov.net');
 	
-	header("location:".$_SERVER["REQUEST_URI"]);
+	if(strpos($_SERVER["HTTP_REFERER"],"login.php")!=false || $_SERVER["HTTP_REFERER"]==null) $r="index.php";
+	else $r=$_SERVER["HTTP_REFERER"];
+	header("location:".$r);
 }

@@ -56,7 +56,9 @@ create table manager_sessions(
 	timestamp int(32) not null,
 	expiry int(32) not null,
 	iid int(11) not null,
-	fid int(11) not null
+	fid int(11) not null,
+	token varchar(64) not null,
+	expired int(1) default 0 not null
 );
 create table manager_actions(
 	id int(11) unique auto_increment primary key not null,
