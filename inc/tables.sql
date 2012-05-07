@@ -73,7 +73,7 @@ create table manager_actions(
 create table projects(
 	id int(11) unique auto_increment primary key not null,
 	title varchar(64) not null,
-	description varchar(2048) not null,
+	summary varchar(2048) not null,
 	pmid int(11) not null,
 	private int(1) default 0 not null,
 	created int(32) not null,
@@ -88,8 +88,8 @@ create table project_managers(
 	id int(11) unique auto_increment primary key not null,
 	pid int(11) not null,
 	mid int(11) not null,
-	reward int(4) not null default 0,
-	reward_type varchar(16) not null default "GBP"
+	r_currency varchar(16) not null default "GBP",
+	r_amount int(4) not null default 0
 );
 create table project_devs(
 	id int(11) unique auto_increment primary key not null,
@@ -101,7 +101,7 @@ create table project_updates(
 	id int(11) not null unique auto_increment,
 	did int(11) not null,
 	title varchar(64) default "Untitled",
-	description varchar(2048) not null,
+	summary varchar(2048) not null,
 	timestamp int(32)
 );
 create table project_bids(
